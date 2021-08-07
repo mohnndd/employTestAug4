@@ -1,0 +1,56 @@
+Develop an generic API container :
+
+•             that will accept a fixed JSON or REST API response ( 100 attributes 1 to 100) and provide a fixed json output ( 1 to 100)
+
+•             The JSON / REST  will have authentication and header which will identify the following
+o             Target database on which the API will call
+o             Stored procedure ID which should be called
+
+•             The API will refer to a database table which will contain rows of records
+o             Stored procedure ID
+o             Actual stored procedure
+o             Target DB
+o             Database connection string for the target DB
+o             Input Attribute 1 to 100 mapping to Stored Procedure
+
+•             The Api on run time will do the following
+o             Receive incoming JSON / REST
+o             Parse the input
+o             Refer to the table look up the correct stored procedure to be run
+o             Pass the data to the db thru db connection and execute the stored procedure
+o             Provide the results back to the calling program
+o             Store a log of the API call with start time and end time of the event.
+
+assumptions:
+
+Technology: Node.JS
+DB: MSSQL Express 2017
+Deployment: Docker 
+Object Type: JSON
+Protocol: REST 
+Web Server: PM2
+Server Side framework: Express
+authentication: basic (bearer, JSONWebToken)
+Piplelines: Github Aug4Test 
+
+Question: 
+Config file or just connection String?
+.Env?
+Rest controller?
+deploy over AWS with RDS? or just princple code on Github enough? 
+print screen for result? 
+Postman collection? -
+
+questions: 
+
+- position? related to business app, core app, commericals, services, onboarding? 
+- single API webapp deployment or Micro-services archtiecrue
+- mission critical app, (require DR and fail-over configration, replication relation) 
+- what technology?
+- deployment on VM or didicated, on-local or co-location?
+- SSL, wildcard vendor or local?
+- agnistoc of speifice? 
+- development or operation?
+- require integration with Active Directory for SSO or you guys use another technology? what MFA used in your infrastracture.
+- number of integration entity and points.
+- is there any items related to maturity level and compliance. 
